@@ -1,0 +1,7 @@
+solver_properties_clear("capmonster") //очистка модуля
+solver_property("capmonster","serverurl",{{url_capmonster}}) //устанавливаем урл из входящих настроек
+solver_property("capmonster","CapMonsterModule","ZennoLab.hotmail") //указываем какой модуль используем у капмонстра .hotmail
+capmonster({{key_captcha}}) //ключ капмонстра, ранее требовалось для нормальной работы удаленно
+
+solve_base64("capmonster", [[SCREENSHOT_BASE64]])! //получаем картинку в base64 и отправляем капмонстру налету
+[[CAPTCHA_RESULT]] = _result() //получаем результат
