@@ -1,0 +1,24 @@
+
+Для совместимости с другими версиями лучше добавлять код в ручную.
+Откройте файл
+\BrowserAutomationStudio\apps\22.6.6\html\scenario\index.html
+и добавьте код в конец файла, перед тегами </body></html> :
+
+<script type="text/javascript">
+var div_previous = document.createElement("div");
+div_previous.id = "history_previous";
+div_previous.style = "position: fixed; border-left: 1px solid #dbdbdb; border-bottom: 1px solid #dbdbdb; border-top: 1px solid #dbdbdb; border-radius: 4px 0px 0px 4px; background-color: #f1f1f1; top: 140px; right: 0px; z-index: 1; font-size: 14px; width: 32px; height: 32px;";
+var button_previous = document.createElement("button");
+button_previous.type = "button";
+button_previous.className = "btn btn-default btn-xs";
+button_previous.onclick = function () {
+    _FunctionManager.ChangeFunction("Main");
+};
+button_previous.style = "margin: 4px; width: 23px; height: 22px;";
+div_previous.appendChild(button_previous);
+var i_previous = document.createElement("i");
+i_previous.className = "fa fa-chevron-left text-primary";
+i_previous["aria-hidden"] = "true";
+button_previous.appendChild(i_previous);
+document.body.insertBefore(div_previous, document.getElementById("helplabelcontainer"));
+</script>
